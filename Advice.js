@@ -3,15 +3,15 @@ import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, on
 export default {
     template: `
     <div>
-    <div>我是Demo</div>
-    <div>{{sum}}</div>
-    <button @click="sum++">點擊</button>
+    <div>我是Advice</div>
+    <div>{{set}}</div>
+    <button @click="set++">點擊</button>
     </div>
         `,
     setup() {
         console.log('---setup---')
         //数据
-        let sum = ref(0)
+        let set = ref(2)
 
         //通过组合式API的形式去使用生命周期钩子
         onBeforeMount(() => {
@@ -35,6 +35,6 @@ export default {
         })
 
         //返回一个对象（常用）
-        return { sum }
+        return { set }
     }
 }

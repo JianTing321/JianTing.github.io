@@ -12,25 +12,25 @@
     <div id="app">
         {{ text }}
         <input type="text" v-model='text'>
-        <Demo>
-        </Demo>
+        <Demo></Demo>
+        <Advice></Advice>
     </div>
 
     <script type="module">
         import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
         //引入CDN ESM形式 
         import Demo from './Demo.js'
+        import Advice from './Advice.js'
+
         const app = createApp({
             name: 'App',
-            components: { Demo },
+            components: { Demo,Advice },
             setup() {
-
                 // 使用 ref() 進行雙向綁定
                 const text = ref('你好啊')
                 onMounted(() => {
                     alert('---onMounted---')
                 })
-
                 // 需要回傳值，才能在 HTML 使用
                 return {
                     text
