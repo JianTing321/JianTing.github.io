@@ -4,9 +4,9 @@ import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, on
 export default {
     template: `
     <div>
-    <div>我是Advice</div>
-    <div>{{set}}</div>
-    <button @click="set++">點擊</button>
+        <div>Advice</div>
+        <div>{{set}}</div>
+        <button @click="set++">點擊</button>
     </div>
         `,
     setup() {
