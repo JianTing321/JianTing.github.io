@@ -1,10 +1,11 @@
 import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
+// import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue'
 
 export default {
     template: 
     `
     <div>
-        <div>我是Demo</div>
+        <div>Demo</div>
         <div>{{sum}}</div>
         <button @click="sum++">點擊</button>
     </div>

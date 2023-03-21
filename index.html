@@ -3,48 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <script src="https://unpkg.com/vue@next"></script>
     <title>Element Plus demo</title>
-    <!-- Import style -->
-    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
-    <!-- Import Vue 3 -->
-    <script src="//unpkg.com/vue@3"></script>
-    <!-- Import component library -->
-    <script src="//unpkg.com/element-plus"></script>
-
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-plus"></script>
 </head>
 
 <body>
-    <div id="app">
-        {{ text }}
-        <input type="text" v-model='text'>
-        <Demo></Demo>
-        <Advice></Advice>
-        <el-button>{{ text }}</el-button>
-    </div>
-    <script type="module">
-        import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
-        //引入CDN ESM形式 
-        import Demo from './Demo.js'
-        import Advice from './Advice.js'
+    <div id="app"></div>
 
-        const app = Vue.createApp({
-            name: 'App',
-            components: { Demo, Advice },
-            setup() {
-                // 使用 ref() 進行雙向綁定
-                const text = ref('你好啊')
-                onMounted(() => {
-                    alert('---onMounted---')
-                })
-                // 需要回傳值，才能在 HTML 使用
-                return {
-                    text
-                }
-            }
-        });
+    <!-- <script type="importmap">
+        {
+            "imports": {
+            "vue":               "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.min.js",
+            "vue-router":        "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js",
+            "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js",
+            "element-plus": "https://cdn.jsdelivr.net/npm/element-plus"
+             } 
+        }
+    </script> -->
+    <script type="module">
+        import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.min.js'
+        import App from './App.js'
+
+        const app = Vue.createApp(App)
         app.use(ElementPlus)
-        app.mount('#app');
+        app.mount('#app')
     </script>
 </body>
 

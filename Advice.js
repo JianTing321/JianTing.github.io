@@ -1,11 +1,12 @@
 import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
+// import {createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue'
 
 export default {
     template: `
     <div>
-    <div>我是Advice</div>
-    <div>{{set}}</div>
-    <button @click="set++">點擊</button>
+        <div>Advice</div>
+        <div>{{set}}</div>
+        <button @click="set++">點擊</button>
     </div>
         `,
     setup() {
