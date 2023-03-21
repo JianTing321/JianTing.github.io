@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- import CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
-    <!-- import JavaScript -->
-    <script src="https://unpkg.com/element-plus"></script>
     <title>Element Plus demo</title>
+    <!-- Import style -->
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+    <!-- Import Vue 3 -->
+    <script src="//unpkg.com/vue@3"></script>
+    <!-- Import component library -->
+    <script src="//unpkg.com/element-plus"></script>
 
 </head>
 
@@ -18,16 +20,17 @@
         <input type="text" v-model='text'>
         <Demo></Demo>
         <Advice></Advice>
+        <el-button>{{ text }}</el-button>
     </div>
     <script type="module">
         import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
         //引入CDN ESM形式 
         import Demo from './Demo.js'
         import Advice from './Advice.js'
-        
-        const app = createApp({
+
+        const app = Vue.createApp({
             name: 'App',
-            components: { Demo,Advice },
+            components: { Demo, Advice },
             setup() {
                 // 使用 ref() 進行雙向綁定
                 const text = ref('你好啊')
@@ -40,6 +43,7 @@
                 }
             }
         });
+        app.use(ElementPlus)
         app.mount('#app');
     </script>
 </body>

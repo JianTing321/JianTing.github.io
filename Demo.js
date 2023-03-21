@@ -4,9 +4,9 @@ export default {
     template: 
     `
     <div>
-    <div>我是Demo</div>
-    <div>{{sum}}</div>
-    <button @click="sum++">點擊</button>
+        <div>我是Demo</div>
+        <div>{{sum}}</div>
+        <button @click="sum++">點擊</button>
     </div>
         `,
     setup() {
