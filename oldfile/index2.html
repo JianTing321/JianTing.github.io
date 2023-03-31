@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-plus"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Type: {{ framework.type }}</p>
+        <p>Framework: {{ framework.name }}</p>
+        <el-button @click="val">{{val}}</el-button>
+    </div>
+</body>
+
+</html>
+<script>
+    const { reactive, ref } = Vue;
+    const app = {
+        setup() {
+            const framework = reactive({
+                type: "Frontend",
+                name: "Vue",
+            })
+            const val = ref(0)
+            return { framework, val }
+        }
+    }
+    const myVue = Vue.createApp(app).use(ElementPlus).mount("#app");
+</script>

@@ -1,19 +1,19 @@
-import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
-// import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue'
+// import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
+const { reactive, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } = Vue;
 
 export default {
     template: 
     `
     <div>
         <div>Demo</div>
-        <div>{{sum}}</div>
-        <button @click="sum++">點擊</button>
+        <div @click="sum++">{{sum}}</div>
+        <el-button @click="sum++">點擊</el-button>
     </div>
         `,
     setup() {
         console.log('---setup---')
         //数据
-        let sum = ref(0)
+        const sum = ref(1)
 
         //通过组合式API的形式去使用生命周期钩子
         onBeforeMount(() => {

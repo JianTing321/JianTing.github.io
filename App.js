@@ -1,22 +1,21 @@
-import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.0-beta.7/vue.esm-browser.min.js'
-// import { createApp, ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue'
+const { reactive, ref } = Vue;
 
-import Demo from './Demo.js'
-import Advice from './Advice.js'
+import Main from './Main.js'
 
-export default {   
+const app = Vue.createApp({
+    components: {
+        Main
+    },
     template: `
-    {{ text }}
-    <Demo></Demo>
-    <Advice></Advice>
-    `,
-    components: { Demo, Advice },
+        <div>
+            <Main></Main>
+            <button @click="sum++">{{sum}}</button>
+        </div>
+     `,
     setup() {
-        const text = ref('你好啊')
-       
+        const sum = ref(0)
         return {
-            text
+            sum,
         }
-    }
-    
-}
+    },
+}).use(ElementPlus).mount('#app')
